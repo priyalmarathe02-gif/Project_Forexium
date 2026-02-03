@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forexium | Currency Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="marquee-wrapper">
+        <div id="marqueeContent" class="marquee-content">
+            <!-- Live rates will be injected here -->
+            <span>Fetching live rates...</span>
+        </div>
+    </div>
+
+    <header class="top-bar">
+        <div class="title-wrapper">
+            <h1 class="app-title">Forexium</h1>
+        </div>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </header>
+
+    <div class="container">
+
+        <div class="card main-card">
+            <p class="subtitle">Real-Time Multi-Currency Converter</p>
+
+            <input type="number" id="amount" placeholder="Enter Amount" step="0.01">
+
+            <div class="row">
+                <select id="fromCurrency"></select>
+                <button id="swap">⇄</button>
+                <select id="toCurrency"></select>
+            </div>
+
+            <button id="convertBtn">Convert Currency</button>
+
+            <div id="loader" class="loader hidden"></div>
+            <p id="error"></p>
+
+            <div id="result" class="result hidden">
+                <p id="convertedAmount"></p>
+                <p id="rateInfo"></p>
+                <p id="updatedTime"></p>
+                <div class="result-actions">
+                    <button id="favoriteBtn" class="action-btn">⭐ Favorite</button>
+                    <button id="copyBtn" class="action-btn">Copy</button>
+                    <button id="shareBtn" class="action-btn">Share</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="infoCard" class="card info-card hidden">
+            <div class="info-header">
+                <div class="info-meta">
+                    <span id="infoFlag" class="info-flag"></span>
+                    <h3 id="infoTitle">Currency Details</h3>
+                </div>
+                <span id="marketBadge" class="market-badge">Stable</span>
+            </div>
+            <div class="info-body">
+                <p id="infoDesc"></p>
+                <div class="hub-header">
+                    <div class="hub-label">Global Exchange Hub</div>
+                    <button id="viewAllHub" class="view-all-btn">View All</button>
+                </div>
+                <div id="globalHub" class="global-hub">
+                    <!-- Global rates will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="history" class="card history-card hidden">
+            <div class="history-header">
+                <h3>Recent Conversions</h3>
+                <button id="clearHistory" class="clear-btn">Clear All</button>
+            </div>
+            <ul id="historyList"></ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
